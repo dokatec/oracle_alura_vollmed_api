@@ -1,4 +1,4 @@
-package voll.me.api.paciente;
+package voll.me.api.domain.paciente;
 
 public record DadosListagemPaciente(
         Long id,

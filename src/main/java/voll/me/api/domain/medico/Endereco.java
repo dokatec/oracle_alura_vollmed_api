@@ -1,4 +1,4 @@
-package voll.me.api.medico;
+package voll.me.api.domain.medico;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
