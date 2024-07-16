@@ -4,7 +4,6 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.auth0.jwt.JWT;
@@ -17,13 +16,9 @@ import voll.me.api.domain.usuario.Usuario;
 @Service
 public class TokenService {
 
-    @Value("${api.security.token.secret}")
-    private String secret;
-
     public String gerarToken(Usuario usuario) {
-        System.out.println(secret);
         try {
-            var algoritmo = Algorithm.HMAC256(secret);
+            var algoritmo = Algorithm.HMAC256("12345678");
             return JWT.create()
                     .withIssuer("API Voll.med")
                     .withSubject(usuario.getLogin())
@@ -39,7 +34,7 @@ public class TokenService {
 
     public String getSubject(String tokenJWT) {
         try {
-            var algoritmo = Algorithm.HMAC256(secret);
+            var algoritmo = Algorithm.HMAC256("12345678");
             return JWT.require(algoritmo)
                     .withIssuer("API Voll.med")
                     .build()
