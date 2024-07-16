@@ -28,4 +28,11 @@ public class TratadorDeErros {
             this(erro.getField(), erro.getDefaultMessage());
         }
     }
+
+    @SuppressWarnings("rawtypes")
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity tratarErroRegraDeNegocio(ValidacaoException ex) {
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
 }

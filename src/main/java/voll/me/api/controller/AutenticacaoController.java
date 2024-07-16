@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
+import voll.me.api.domain.usuario.DadosAutenticacao;
 import voll.me.api.domain.usuario.Usuario;
 import voll.me.api.infra.security.DadosTokenJWT;
 import voll.me.api.infra.security.TokenService;
