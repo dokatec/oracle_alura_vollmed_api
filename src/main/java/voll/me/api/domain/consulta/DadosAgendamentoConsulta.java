@@ -8,10 +8,9 @@ import voll.me.api.domain.medico.Especialidade;
 
 public record DadosAgendamentoConsulta(
 
-                Long idMedico,
-                @NotNull Long idPaciente,
-                @NotNull @Future LocalDateTime data,
+                Long idMedico, @NotNull Long idPaciente, @NotNull @Future LocalDateTime data,
+                Especialidade especialidade
 
-                Especialidade especialidade) {
+) {
 
 }
